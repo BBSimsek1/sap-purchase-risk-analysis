@@ -1,0 +1,27 @@
+VERY_RISKY_LIMIT = 10000
+RISKY_LIMIT = 5000
+
+INPUT_FILE_PATH = "purchase_requests.json"
+OUTPUT_FILE_PATH = "updated_purchase_requests.json"
+LOG_FILE_PATH = "app.log"
+
+LOG_LEVEL_INFO = "INFO"
+LOG_LEVEL_WARNING = "WARNING"
+LOG_LEVEL_ERROR = "ERROR"
+
+FIELD_ID = "id"
+FIELD_AMOUNT = "amount"
+FIELD_DEPARTMENT = "department"
+FIELD_SUPPLIER = "supplier"
+FIELD_RISK_STATUS = "risk_status"
+FIELD_AI_COMMENT = "ai_comment"
+FIELD_RECOMMENDED_ACTION = "recommended_action"
+
+RISK_STATUS_VERY_RISKY = "Çok Riskli Talep"
+RISK_STATUS_RISKY = "Riskli Talep"
+RISK_STATUS_NORMAL = "Normal Talep"
+
+SUMMARY_TOTAL_COUNT = "total_count"
+SUMMARY_NORMAL_COUNT = "normal_count"
+SUMMARY_RISKY_COUNT = "risky_count"
+SUMMARY_VERY_RISKY_COUNT = "very_risky_count"

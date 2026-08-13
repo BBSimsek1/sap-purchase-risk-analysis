@@ -292,3 +292,38 @@ pip install -r requirements.txt
 ```
 
 Bu projede `requirements.txt` içinde harici paket bulunmamaktadır.
+
+## Örnek Terminal Çıktısı
+
+Program çalıştırıldığında terminalde aşağıdakine benzer bir rapor üretilir:
+
+```text
+Satın Alma Risk Raporu
+----------------------
+
+Talep ID: PR001
+Tutar: 9000
+Departman: IT
+Tedarikçi: ABC Teknoloji
+Risk Durumu: Riskli Talep
+AI Yorumu: Bu talep yüksek tutarlı olduğu için yönetici onayı önerilir.
+Önerilen Aksiyon: Yönetici onayına gönder.
+
+Talep ID: PR002
+Tutar: 3000
+Departman: Finance
+Tedarikçi: XYZ AŞ
+Risk Durumu: Normal Talep
+AI Yorumu: Bu talep belirlenen risk limitleri içinde görünüyor.
+Önerilen Aksiyon: Standart onay sürecine devam et.
+
+Talep ID: PR003
+Tutar: 15000
+Departman: Operations
+Tedarikçi: Mega Lojistik
+Risk Durumu: Çok Riskli Talep
+AI Yorumu: Bu talep çok yüksek tutarlı olduğu için üst yönetim onayı önerilir.
+Önerilen Aksiyon: Üst yönetim onayına gönder.
+```
+
+Bu çıktı, satın alma taleplerinin risk seviyelerine göre analiz edildiğini ve her talep için önerilen aksiyon üretildiğini gösterir.

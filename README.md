@@ -341,3 +341,33 @@ Bu projede aşağıdaki teknolojiler ve Python kavramları kullanılmıştır:
 - Loglama
 - Git ve GitHub
 - Markdown dokümantasyonu
+
+## Proje Mimarisi
+
+Proje modüler bir yapıda tasarlanmıştır. Her dosyanın tek bir temel sorumluluğu vardır.
+
+```text
+main.py
+→ Programın ana akışını yönetir.
+
+data_loader.py
+→ JSON dosyasından satın alma taleplerini okur.
+
+validator.py
+→ Satın alma taleplerinin veri formatını kontrol eder.
+
+risk_analyzer.py
+→ Taleplere risk durumu, AI yorumu ve önerilen aksiyon ekler.
+→ Özet hesaplamalarını yapar.
+
+reporter.py
+→ Analiz sonuçlarını terminalde raporlar.
+
+data_writer.py
+→ Güncellenmiş talepleri JSON dosyasına kaydeder.
+
+logger.py
+→ Program akışını ve hata durumlarını app.log dosyasına yazar.
+
+constants.py
+→ Ortak sabitleri, dosya yollarını, alan adlarını ve risk limitlerini tutar.

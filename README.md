@@ -327,3 +327,17 @@ AI Yorumu: Bu talep çok yüksek tutarlı olduğu için üst yönetim onayı ön
 ```
 
 Bu çıktı, satın alma taleplerinin risk seviyelerine göre analiz edildiğini ve her talep için önerilen aksiyon üretildiğini gösterir.
+
+## Kullanılan Teknolojiler ve Kavramlar
+
+Bu projede aşağıdaki teknolojiler ve Python kavramları kullanılmıştır:
+
+- Python
+- JSON dosya okuma ve yazma
+- Fonksiyonlar
+- Modüler dosya yapısı
+- Veri doğrulama
+- Hata yönetimi
+- Loglama
+- Git ve GitHub
+- Markdown dokümantasyonu

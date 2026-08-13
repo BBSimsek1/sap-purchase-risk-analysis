@@ -1,9 +1,7 @@
-VERY_RISKY_LIMIT = 10000
-RISKY_LIMIT = 5000
-
 INPUT_FILE_PATH = "purchase_requests.json"
 OUTPUT_FILE_PATH = "updated_purchase_requests.json"
 LOG_FILE_PATH = "app.log"
+CONFIG_FILE_PATH = "config.json"
 
 LOG_LEVEL_INFO = "INFO"
 LOG_LEVEL_WARNING = "WARNING"

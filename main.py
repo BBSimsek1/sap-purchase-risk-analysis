@@ -4,12 +4,12 @@ from risk_analyzer import add_risk_status_to_all, calculate_risk_summary, calcul
 from data_writer import save_updated_requests
 from reporter import show_purchase_report
 from logger import write_log
+from config_loader import load_config
 from constants import (
-    VERY_RISKY_LIMIT,
-    RISKY_LIMIT,
     INPUT_FILE_PATH,
     OUTPUT_FILE_PATH,
     LOG_FILE_PATH,
+    CONFIG_FILE_PATH,
     FIELD_DEPARTMENT,
     FIELD_SUPPLIER,
     FIELD_RISK_STATUS,
@@ -69,13 +69,18 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
 
 def main():
     write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Program başlatıldı.")
-    
-    purchase_requests = load_purchase_requests(INPUT_FILE_PATH)
 
-    if len(purchase_requests) == 0:
-        print("Rapor oluşturulamadı: satın alma talebi bulunamadı.")
-        write_log(LOG_FILE_PATH, LOG_LEVEL_WARNING, "Rapor oluşturulamadı: satın alma talebi bulunamadı.")
-        return
+    config = load_config(CONFIG_FILE_PATH)
+
+    if len(config) == 0:
+        print("Rapor oluşturulamadı: config dosyası okunamadı.")
+        write_log(LOG_FILE_PATH, LOG_LEVEL_WARNING, "Rapor oluşturulamadı: config dosyası okunamadı.")
+        return    
+    
+    very_risky_limit = config["very_risky_limit"]
+    risky_limit = config["risky_limit"]
+
+    purchase_requests = load_purchase_requests(INPUT_FILE_PATH)
     
     is_valid, validation_errors = validate_purchase_requests(purchase_requests)
 
@@ -94,8 +99,8 @@ def main():
 
     generate_purchase_risk_report(
         purchase_requests, 
-        VERY_RISKY_LIMIT, 
-        RISKY_LIMIT
+        very_risky_limit, 
+        risky_limit
     )
 
 if __name__ == "__main__":

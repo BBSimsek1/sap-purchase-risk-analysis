@@ -278,3 +278,17 @@ Hata: PR001 kaydında supplier alanı boş olamaz.
 ```
 
 Bu hatalar terminale yazdırılır ve `app.log` dosyasına `[ERROR]` seviyesiyle kaydedilir.
+
+## Kurulum
+
+Bu proje harici bir Python paketine ihtiyaç duymaz. Gerekli dosyalar repository içinde bulunmaktadır.
+
+Yine de standart Python proje yapısını göstermek için `requirements.txt` dosyası eklenmiştir.
+
+Bağımlılıkları kurmak için:
+
+```bash
+pip install -r requirements.txt
+```
+
+Bu projede `requirements.txt` içinde harici paket bulunmamaktadır.

@@ -16,3 +16,7 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Loglama sistemi eklendi.
 - README dokümantasyonu güncellendi.
 - requirements.txt, .gitignore ve LICENSE dosyaları eklendi.
+- Risk limitlerini `config.json` dosyasından okuma özelliği eklendi.
+- Config dosyasını okumak için `config_loader.py` modülü eklendi.
+- Config dosyasındaki değerleri doğrulamak için `config_validator.py` modülü eklendi.
+- Config hatalı olduğunda programın rapor oluşturmadan kontrollü şekilde durması sağlandı.

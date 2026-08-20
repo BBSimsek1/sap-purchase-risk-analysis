@@ -371,3 +371,15 @@ logger.py
 
 constants.py
 → Ortak sabitleri, dosya yollarını, alan adlarını ve risk limitlerini tutar.
+
+## Config Ayarları
+
+Risk limitleri `config.json` dosyasından okunur.
+
+Örnek `config.json`:
+
+```json
+{
+    "very_risky_limit": 10000,
+    "risky_limit": 5000
+}

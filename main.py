@@ -5,6 +5,7 @@ from data_writer import save_updated_requests
 from reporter import show_purchase_report
 from logger import write_log
 from config_loader import load_config
+from config_validator import validate_config
 from constants import (
     INPUT_FILE_PATH,
     OUTPUT_FILE_PATH,
@@ -74,14 +75,33 @@ def main():
 
     if len(config) == 0:
         print("Rapor oluşturulamadı: config dosyası okunamadı.")
-        write_log(LOG_FILE_PATH, LOG_LEVEL_WARNING, "Rapor oluşturulamadı: config dosyası okunamadı.")
-        return    
-    
+        write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: config dosyası okunamadı.")
+        return
+
+    is_config_valid, config_errors = validate_config(config)
+
+    if not is_config_valid:
+        print("Config doğrulama hataları:")
+        print("--------------------------")
+
+        for error in config_errors:
+            print(error)
+            write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, error)
+
+        print("Rapor oluşturulamadı: config dosyası hatalı.")
+        write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: config dosyası hatalı.")
+        return
+
     very_risky_limit = config["very_risky_limit"]
     risky_limit = config["risky_limit"]
 
     purchase_requests = load_purchase_requests(INPUT_FILE_PATH)
-    
+
+    if len(purchase_requests) == 0:
+        print("Rapor oluşturulamadı: satın alma talebi bulunamadı.")
+        write_log(LOG_FILE_PATH, LOG_LEVEL_WARNING, "Rapor oluşturulamadı: satın alma talebi bulunamadı.")
+        return
+
     is_valid, validation_errors = validate_purchase_requests(purchase_requests)
 
     if not is_valid:
@@ -91,15 +111,14 @@ def main():
         for error in validation_errors:
             print(error)
             write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, error)
-        
+
         print("Rapor oluşturulamadı: veri formatı eksik veya hatalı.")
         write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: veri formatı eksik veya hatalı.")
-
         return
 
     generate_purchase_risk_report(
-        purchase_requests, 
-        very_risky_limit, 
+        purchase_requests,
+        very_risky_limit,
         risky_limit
     )
 

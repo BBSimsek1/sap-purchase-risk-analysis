@@ -20,3 +20,4 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Config dosyasını okumak için `config_loader.py` modülü eklendi.
 - Config dosyasındaki değerleri doğrulamak için `config_validator.py` modülü eklendi.
 - Config hatalı olduğunda programın rapor oluşturmadan kontrollü şekilde durması sağlandı.
+- Terminal raporunda kullanılan risk limitlerinin gösterilmesi sağlandı.

@@ -383,3 +383,8 @@ Risk limitleri `config.json` dosyasından okunur.
     "very_risky_limit": 10000,
     "risky_limit": 5000
 }
+
+Kullanılan Risk Limitleri
+-------------------------
+Riskli Talep Limiti: 5000
+Çok Riskli Talep Limiti: 10000

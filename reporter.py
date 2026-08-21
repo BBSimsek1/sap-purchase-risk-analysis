@@ -19,8 +19,20 @@ def show_purchase_report(
     department_summary, 
     department_amount_summary, 
     supplier_amount_summary, 
-    risk_amount_summary
+    risk_amount_summary,
+    risky_limit,
+    very_risky_limit
 ):
+
+    print("Satın Alma Risk Raporu")
+    print("----------------------")
+    print()
+
+    print("Kullanılan Risk Limitleri")
+    print("-------------------------")
+    print(f"Riskli Talep Limiti: {risky_limit}")
+    print(f"Çok Riskli Talep Limiti: {very_risky_limit}")
+    print()
 
     for request in updated_requests:
         print(f"Talep no: {request[FIELD_ID]}")

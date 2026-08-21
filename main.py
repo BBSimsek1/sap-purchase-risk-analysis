@@ -62,7 +62,9 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         department_summary, 
         department_amount_summary, 
         supplier_amount_summary, 
-        risk_amount_summary
+        risk_amount_summary,
+        risky_limit,
+        very_risky_limit
     )
 
     save_updated_requests(OUTPUT_FILE_PATH, updated_requests)

@@ -67,7 +67,16 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         very_risky_limit
     )
 
-    save_updated_requests(OUTPUT_FILE_PATH, updated_requests)
+    report_data = {
+        "summary": summary,
+        "department_summary": department_summary,
+        "department_amount_summary": department_amount_summary,
+        "supplier_amount_summary": supplier_amount_summary,
+        "risk_amount_summary": risk_amount_summary,
+        "requests": updated_requests
+    }
+
+    save_updated_requests(OUTPUT_FILE_PATH, report_data)
 
 
 def main():

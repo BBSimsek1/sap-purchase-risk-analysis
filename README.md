@@ -167,6 +167,55 @@ Program talebe şu alanları ekler:
 }
 ```
 
+## JSON Çıktı Yapısı
+
+Program çalıştıktan sonra analiz sonucu `updated_purchase_requests.json` dosyasına kaydedilir.
+
+Bu dosya sadece güncellenmiş satın alma taleplerini değil, rapor özetlerini de içerir.
+
+Örnek çıktı yapısı:
+
+```json
+{
+    "summary": {
+        "total_count": 3,
+        "normal_count": 1,
+        "risky_count": 1,
+        "very_risky_count": 1
+    },
+    "department_summary": {
+        "IT": 1,
+        "Finance": 1,
+        "Operations": 1
+    },
+    "department_amount_summary": {
+        "IT": 9000,
+        "Finance": 3000,
+        "Operations": 15000
+    },
+    "supplier_amount_summary": {
+        "ABC Teknoloji": 9000,
+        "XYZ AŞ": 3000,
+        "Mega Lojistik": 15000
+    },
+    "risk_amount_summary": {
+        "Riskli Talep": 9000,
+        "Normal Talep": 3000,
+        "Çok Riskli Talep": 15000
+    },
+    "requests": [
+        {
+            "id": "PR001",
+            "amount": 9000,
+            "department": "IT",
+            "supplier": "ABC Teknoloji",
+            "risk_status": "Riskli Talep",
+            "ai_comment": "Bu talep yüksek tutarlı olduğu için yönetici onayı önerilir.",
+            "recommended_action": "Yönetici onayına gönder."
+        }
+    ]
+}
+
 ## Test Senaryoları
 
 Bu projede aşağıdaki veri senaryoları test edilmiştir.

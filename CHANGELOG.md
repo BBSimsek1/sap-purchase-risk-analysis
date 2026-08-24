@@ -21,3 +21,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Config dosyasındaki değerleri doğrulamak için `config_validator.py` modülü eklendi.
 - Config hatalı olduğunda programın rapor oluşturmadan kontrollü şekilde durması sağlandı.
 - Terminal raporunda kullanılan risk limitlerinin gösterilmesi sağlandı.
+- `updated_purchase_requests.json` dosyasına tam rapor verisinin kaydedilmesi sağlandı.
+- JSON çıktı yapısı; genel özet, departman özeti, tedarikçi tutar özeti, risk tutar özeti ve detay talepleri içerecek şekilde genişletildi.

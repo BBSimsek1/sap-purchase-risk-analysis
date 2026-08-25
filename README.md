@@ -177,6 +177,7 @@ Bu dosya sadece güncellenmiş satın alma taleplerini değil, rapor özetlerini
 
 ```json
 {
+    "generated_at": "2026-08-25 10:05:00"
     "summary": {
         "total_count": 3,
         "normal_count": 1,

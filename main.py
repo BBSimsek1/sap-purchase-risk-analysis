@@ -57,6 +57,8 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         FIELD_RISK_STATUS
     )
 
+    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     show_purchase_report(
         updated_requests, 
         summary, 
@@ -65,11 +67,12 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         supplier_amount_summary, 
         risk_amount_summary,
         risky_limit,
-        very_risky_limit
+        very_risky_limit,
+        generated_at,
     )
 
     report_data = {
-    "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "generated_at": generated_at,
     "summary": summary,
     "department_summary": department_summary,
     "department_amount_summary": department_amount_summary,

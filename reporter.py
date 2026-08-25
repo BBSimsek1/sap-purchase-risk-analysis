@@ -21,11 +21,15 @@ def show_purchase_report(
     supplier_amount_summary, 
     risk_amount_summary,
     risky_limit,
-    very_risky_limit
+    very_risky_limit,
+    generated_at
 ):
 
     print("Satın Alma Risk Raporu")
     print("----------------------")
+    print()
+
+    print(f"Rapor Üretim Zamanı: {generated_at}")
     print()
 
     print("Kullanılan Risk Limitleri")

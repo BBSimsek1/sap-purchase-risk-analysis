@@ -6,6 +6,7 @@ from reporter import show_purchase_report
 from logger import write_log
 from config_loader import load_config
 from config_validator import validate_config
+from datetime import datetime
 from constants import (
     INPUT_FILE_PATH,
     OUTPUT_FILE_PATH,
@@ -68,12 +69,13 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     )
 
     report_data = {
-        "summary": summary,
-        "department_summary": department_summary,
-        "department_amount_summary": department_amount_summary,
-        "supplier_amount_summary": supplier_amount_summary,
-        "risk_amount_summary": risk_amount_summary,
-        "requests": updated_requests
+    "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "summary": summary,
+    "department_summary": department_summary,
+    "department_amount_summary": department_amount_summary,
+    "supplier_amount_summary": supplier_amount_summary,
+    "risk_amount_summary": risk_amount_summary,
+    "requests": updated_requests
     }
 
     save_updated_requests(OUTPUT_FILE_PATH, report_data)

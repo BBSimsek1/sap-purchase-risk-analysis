@@ -351,6 +351,13 @@ Program çalıştırıldığında terminalde aşağıdakine benzer bir rapor ür
 Satın Alma Risk Raporu
 ----------------------
 
+Rapor Üretim Zamanı: 2026-08-25 10:26:00
+
+Kullanılan Risk Limitleri
+-------------------------
+Riskli Talep Limiti: 5000
+Çok Riskli Talep Limiti: 10000
+
 Talep ID: PR001
 Tutar: 9000
 Departman: IT

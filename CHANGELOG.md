@@ -26,3 +26,4 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - JSON rapor çıktısına `generated_at` alanı eklenerek raporun üretim zamanının kaydedilmesi sağlandı.
 - Terminal raporunda `generated_at` bilgisinin gösterilmesi sağlandı.
 - JSON rapor çıktısına analizde kullanılan risk limitlerini gösteren `risk_limits` alanı eklendi.
+- JSON rapor çıktısına raporun hangi giriş dosyasından üretildiğini gösteren `source_file` alanı eklendi.

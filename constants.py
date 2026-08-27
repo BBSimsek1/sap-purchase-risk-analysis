@@ -25,3 +25,4 @@ SUMMARY_RISKY_COUNT = "risky_count"
 SUMMARY_VERY_RISKY_COUNT = "very_risky_count"
 
 REPORT_TYPE_PURCHASE_RISK_ANALYSIS = "purchase_risk_analysis"
+REPORT_VERSION = "1.0"

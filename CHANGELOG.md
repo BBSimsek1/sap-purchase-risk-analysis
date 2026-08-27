@@ -27,3 +27,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Terminal raporunda `generated_at` bilgisinin gösterilmesi sağlandı.
 - JSON rapor çıktısına analizde kullanılan risk limitlerini gösteren `risk_limits` alanı eklendi.
 - JSON rapor çıktısına raporun hangi giriş dosyasından üretildiğini gösteren `source_file` alanı eklendi.
+- JSON rapor çıktısına rapor türünü gösteren `report_type` alanı eklendi.
+- JSON rapor çıktısına rapor format versiyonunu gösteren `report_version` alanı eklendi.
+- `report_type` değeri `constants.py` içinde sabit olarak yönetilecek şekilde düzenlendi.

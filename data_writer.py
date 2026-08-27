@@ -5,4 +5,4 @@ def save_updated_requests(file_path, updated_requests):
         json.dump(updated_requests, file, ensure_ascii=False, indent=4)
 
     print()
-    print(f"Güncellenmiş talepler {file_path} dosyasına kaydedildi.")
+    print(f"Rapor verisi {file_path} dosyasına kaydedildi.")

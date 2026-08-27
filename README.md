@@ -27,7 +27,7 @@ week3/
 ├── reporter.py
 ├── logger.py
 ├── purchase_requests.json
-├── updated_purchase_requests.json
+├── purchase_risk_report.json
 ├── app.log
 └── README.md
 ```
@@ -45,7 +45,7 @@ data_loader.py
 → purchase_requests.json dosyasından veri okur.
 
 data_writer.py
-→ Güncellenmiş talepleri updated_purchase_requests.json dosyasına yazar.
+→ Güncellenmiş talepleri purchase_risk_report.json dosyasına yazar.
 
 validator.py
 → Satın alma taleplerinin veri formatını kontrol eder ve hata listesini döndürür.
@@ -62,7 +62,7 @@ logger.py
 purchase_requests.json
 → Ham satın alma taleplerinin bulunduğu giriş dosyası.
 
-updated_purchase_requests.json
+purchase_risk_report.json
 → Risk bilgileri eklenmiş çıktı dosyası.
 
 app.log
@@ -169,7 +169,7 @@ Program talebe şu alanları ekler:
 
 ## JSON Çıktı Yapısı
 
-Program çalıştıktan sonra analiz sonucu `updated_purchase_requests.json` dosyasına kaydedilir.
+Program çalıştıktan sonra analiz sonucu `purchase_risk_report.json` dosyasına kaydedilir.
 
 Bu dosya sadece güncellenmiş satın alma taleplerini değil, rapor özetlerini de içerir.
 

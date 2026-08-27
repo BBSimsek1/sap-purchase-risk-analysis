@@ -1,5 +1,5 @@
 INPUT_FILE_PATH = "purchase_requests.json"
-OUTPUT_FILE_PATH = "updated_purchase_requests.json"
+OUTPUT_FILE_PATH = "purchase_risk_report.json"
 LOG_FILE_PATH = "app.log"
 CONFIG_FILE_PATH = "config.json"
 

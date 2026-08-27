@@ -25,3 +25,4 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - JSON çıktı yapısı; genel özet, departman özeti, tedarikçi tutar özeti, risk tutar özeti ve detay talepleri içerecek şekilde genişletildi.
 - JSON rapor çıktısına `generated_at` alanı eklenerek raporun üretim zamanının kaydedilmesi sağlandı.
 - Terminal raporunda `generated_at` bilgisinin gösterilmesi sağlandı.
+- JSON rapor çıktısına analizde kullanılan risk limitlerini gösteren `risk_limits` alanı eklendi.

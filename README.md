@@ -177,7 +177,9 @@ Bu dosya sadece güncellenmiş satın alma taleplerini değil, rapor özetlerini
 
 ```json
 {
-    "generated_at": "2026-08-25 10:05:00",
+    "report_type": "purchase_risk_analysis",
+    "report_version": "1.0",
+    "generated_at": "2026-08-27 15:57:00",
     "source_file": "purchase_requests.json",
     "risk_limits": {
         "risky_limit": 5000,

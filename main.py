@@ -21,7 +21,8 @@ from constants import (
     SUMMARY_TOTAL_COUNT,
     SUMMARY_NORMAL_COUNT,
     SUMMARY_RISKY_COUNT,
-    SUMMARY_VERY_RISKY_COUNT
+    SUMMARY_VERY_RISKY_COUNT,
+    REPORT_TYPE_PURCHASE_RISK_ANALYSIS
 )
    
 
@@ -72,7 +73,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     )
 
     report_data = {
-    "report_type": "purchase_risk_analysis",
+    "report_type": REPORT_TYPE_PURCHASE_RISK_ANALYSIS,
     "generated_at": generated_at,
     "source_file": INPUT_FILE_PATH,
     "risk_limits": {

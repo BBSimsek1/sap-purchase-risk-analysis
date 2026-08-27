@@ -177,7 +177,11 @@ Bu dosya sadece güncellenmiş satın alma taleplerini değil, rapor özetlerini
 
 ```json
 {
-    "generated_at": "2026-08-25 10:05:00"
+    "generated_at": "2026-08-25 10:05:00",
+    "risk_limits": {
+        "risky_limit": 5000,
+        "very_risky_limit": 10000
+    },
     "summary": {
         "total_count": 3,
         "normal_count": 1,

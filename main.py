@@ -72,6 +72,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     )
 
     report_data = {
+    "report_type": "purchase_risk_analysis",
     "generated_at": generated_at,
     "source_file": INPUT_FILE_PATH,
     "risk_limits": {

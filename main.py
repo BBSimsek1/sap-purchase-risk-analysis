@@ -73,6 +73,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
 
     report_data = {
     "generated_at": generated_at,
+    "source_file": INPUT_FILE_PATH,
     "risk_limits": {
         "risky_limit": risky_limit,
         "very_risky_limit": very_risky_limit
@@ -83,7 +84,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     "supplier_amount_summary": supplier_amount_summary,
     "risk_amount_summary": risk_amount_summary,
     "requests": updated_requests
-    }
+}
 
     save_updated_requests(OUTPUT_FILE_PATH, report_data)
 

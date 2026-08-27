@@ -73,6 +73,10 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
 
     report_data = {
     "generated_at": generated_at,
+    "risk_limits": {
+        "risky_limit": risky_limit,
+        "very_risky_limit": very_risky_limit
+    },
     "summary": summary,
     "department_summary": department_summary,
     "department_amount_summary": department_amount_summary,

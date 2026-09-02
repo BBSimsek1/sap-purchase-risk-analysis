@@ -7,6 +7,7 @@ from logger import write_log
 from config_loader import load_config
 from config_validator import validate_config
 from datetime import datetime
+from report_builder import build_report_data
 from constants import (
     INPUT_FILE_PATH,
     OUTPUT_FILE_PATH,
@@ -86,37 +87,6 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     )
 
     save_report_data(OUTPUT_FILE_PATH, report_data)
-
-
-def build_report_data(
-    generated_at,
-    risky_limit,
-    very_risky_limit,
-    summary,
-    department_summary,
-    department_amount_summary,
-    supplier_amount_summary,
-    risk_amount_summary,
-    updated_requests
-):
-    report_data = {
-        "report_type": REPORT_TYPE_PURCHASE_RISK_ANALYSIS,
-        "report_version": REPORT_VERSION,
-        "generated_at": generated_at,
-        "source_file": INPUT_FILE_PATH,
-        "risk_limits": {
-            "risky_limit": risky_limit,
-            "very_risky_limit": very_risky_limit
-        },
-        "summary": summary,
-        "department_summary": department_summary,
-        "department_amount_summary": department_amount_summary,
-        "supplier_amount_summary": supplier_amount_summary,
-        "risk_amount_summary": risk_amount_summary,
-        "requests": updated_requests
-    }
-
-    return report_data
 
 
 def main():

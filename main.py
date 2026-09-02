@@ -26,7 +26,35 @@ from constants import (
     REPORT_TYPE_PURCHASE_RISK_ANALYSIS,
     REPORT_VERSION
 )
-   
+
+
+def calculate_report_summaries(updated_requests):
+    summary = calculate_risk_summary(updated_requests)
+    department_summary = calculate_department_summary(updated_requests)
+
+    department_amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_DEPARTMENT
+    )
+
+    supplier_amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_SUPPLIER
+    )
+
+    risk_amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_RISK_STATUS
+    )
+
+    return(
+        summary,
+        department_summary,
+        department_amount_summary,
+        supplier_amount_summary,
+        risk_amount_summary
+    )
+
 
 def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_limit):
     updated_requests = add_risk_status_to_all(
@@ -35,7 +63,14 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         risky_limit
     )
 
-    summary = calculate_risk_summary(updated_requests)
+    (
+        summary,
+        department_summary,
+        department_amount_summary,
+        supplier_amount_summary,
+        risk_amount_summary
+    ) = calculate_report_summaries(updated_requests)
+    
 
     write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Satın alma risk raporu oluşturuldu.")
     write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Toplam talep sayısı: {summary[SUMMARY_TOTAL_COUNT]}")
@@ -43,23 +78,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Riskli talep sayısı: {summary[SUMMARY_RISKY_COUNT]}")
     write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Çok riskli talep sayısı: {summary[SUMMARY_VERY_RISKY_COUNT]}")
 
-    department_summary = calculate_department_summary(updated_requests)
-
-    department_amount_summary = calculate_amount_summary_by_field(
-        updated_requests, 
-        FIELD_DEPARTMENT
-    )
-
-    supplier_amount_summary = calculate_amount_summary_by_field(
-        updated_requests, 
-        FIELD_SUPPLIER
-    )
-
-    risk_amount_summary = calculate_amount_summary_by_field(
-        updated_requests, 
-        FIELD_RISK_STATUS
-    )
-
+    
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     show_purchase_report(

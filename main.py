@@ -114,24 +114,13 @@ def load_and_validate_config():
     return config
     
 
-
-def main():
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Program başlatıldı.")
-
-    config = load_and_validate_config()
-
-    if config is None:
-        return
-
-    very_risky_limit = config["very_risky_limit"]
-    risky_limit = config["risky_limit"]
-
+def load_and_validate_purchase_requests():
     purchase_requests = load_purchase_requests(INPUT_FILE_PATH)
 
     if len(purchase_requests) == 0:
         print("Rapor oluşturulamadı: satın alma talebi bulunamadı.")
         write_log(LOG_FILE_PATH, LOG_LEVEL_WARNING, "Rapor oluşturulamadı: satın alma talebi bulunamadı.")
-        return
+        return None
 
     is_valid, validation_errors = validate_purchase_requests(purchase_requests)
 
@@ -145,6 +134,25 @@ def main():
 
         print("Rapor oluşturulamadı: veri formatı eksik veya hatalı.")
         write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: veri formatı eksik veya hatalı.")
+        return None
+
+    return purchase_requests
+
+
+def main():
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Program başlatıldı.")
+
+    config = load_and_validate_config()
+
+    if config is None:
+        return
+
+    very_risky_limit = config["very_risky_limit"]
+    risky_limit = config["risky_limit"]
+
+    purchase_requests = load_and_validate_purchase_requests()
+
+    if purchase_requests is None:
         return
 
     generate_purchase_risk_report(

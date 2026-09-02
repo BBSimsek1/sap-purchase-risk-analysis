@@ -1,7 +1,7 @@
 from data_loader import load_purchase_requests
 from validator import validate_purchase_requests
 from risk_analyzer import add_risk_status_to_all, calculate_risk_summary, calculate_department_summary, calculate_amount_summary_by_field
-from data_writer import save_updated_requests
+from data_writer import save_report_data
 from reporter import show_purchase_report
 from logger import write_log
 from config_loader import load_config
@@ -90,7 +90,7 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     "requests": updated_requests
 }
 
-    save_updated_requests(OUTPUT_FILE_PATH, report_data)
+    save_report_data(OUTPUT_FILE_PATH, report_data)
 
 
 def main():

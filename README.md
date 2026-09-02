@@ -471,8 +471,13 @@ Program şu sırayla çalışır:
 2. Config dosyası yüklenir ve doğrulanır.
 3. Satın alma talepleri yüklenir ve doğrulanır.
 4. Risk analizi yapılır.
-5. Terminal raporu gösterilir.
-6. JSON rapor çıktısı oluşturulur.
+5. Rapor özetleri hesaplanır.
+6. Terminal raporu gösterilir.
+7. JSON rapor çıktısı oluşturulur.
+
+Risk analizi sonrasında rapor özetleri `calculate_report_summaries()` fonksiyonu ile hesaplanır.
+
+Bu fonksiyon; risk özeti, departman özeti, departman bazlı tutar özeti, tedarikçi bazlı tutar özeti ve risk durumuna göre tutar özetini hazırlar.
 
 Config okuma ve doğrulama işlemleri `load_and_validate_config()` fonksiyonu ile yönetilir.
 

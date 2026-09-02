@@ -38,3 +38,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `main()` fonksiyonu sadeleştirilerek uygulamanın ana iş akışını daha net gösterecek hale getirildi.
 - Config ve satın alma talebi yükleme/doğrulama yardımcı fonksiyonları `app_loader.py` dosyasına taşındı.
 - `main.py` dosyası sadeleştirilerek yalnızca ana uygulama akışını yönetecek hale getirildi.
+- Rapor özetlerini hesaplama işlemi `calculate_report_summaries()` fonksiyonuna taşındı.
+- `generate_purchase_risk_report()` fonksiyonu sadeleştirildi.

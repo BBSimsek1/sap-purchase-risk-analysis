@@ -29,6 +29,7 @@ week3/
 ├── purchase_requests.json
 ├── purchase_risk_report.json
 ├── app.log
+├── report_builder.py
 └── README.md
 ```
 
@@ -45,7 +46,7 @@ data_loader.py
 → purchase_requests.json dosyasından veri okur.
 
 data_writer.py
-→ Güncellenmiş talepleri purchase_risk_report.json dosyasına yazar.
+→ Oluşturulan rapor verisini JSON dosyasına yazar.
 
 validator.py
 → Satın alma taleplerinin veri formatını kontrol eder ve hata listesini döndürür.
@@ -64,6 +65,9 @@ purchase_requests.json
 
 purchase_risk_report.json
 → Risk bilgileri eklenmiş çıktı dosyası.
+
+report_builder.py
+→ JSON rapor çıktısında kullanılacak rapor verisini oluşturur.
 
 app.log
 → Program çalışma kayıtlarının tutulduğu log dosyası.

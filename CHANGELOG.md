@@ -33,3 +33,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `build_report_data()` fonksiyonu `report_builder.py` modülüne taşındı.
 - JSON rapor verisi oluşturma sorumluluğu `main.py` dosyasından ayrıldı.
 - Rapor yazma fonksiyonu `save_report_data()` olarak yeniden adlandırıldı.
+- Config okuma ve doğrulama süreci `load_and_validate_config()` fonksiyonuna taşındı.
+- Satın alma taleplerini okuma ve doğrulama süreci `load_and_validate_purchase_requests()` fonksiyonuna taşındı.
+- `main()` fonksiyonu sadeleştirilerek uygulamanın ana iş akışını daha net gösterecek hale getirildi.

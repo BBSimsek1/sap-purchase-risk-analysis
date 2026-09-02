@@ -456,3 +456,22 @@ Kullanılan Risk Limitleri
 -------------------------
 Riskli Talep Limiti: 5000
 Çok Riskli Talep Limiti: 10000
+
+## Ana Program Akışı
+
+`main.py` dosyasındaki `main()` fonksiyonu uygulamanın ana iş akışını yönetir.
+
+Program şu sırayla çalışır:
+
+1. Program başlatılır ve log kaydı oluşturulur.
+2. Config dosyası yüklenir ve doğrulanır.
+3. Satın alma talepleri yüklenir ve doğrulanır.
+4. Risk analizi yapılır.
+5. Terminal raporu gösterilir.
+6. JSON rapor çıktısı oluşturulur.
+
+Config okuma ve doğrulama işlemleri `load_and_validate_config()` fonksiyonu ile yönetilir.
+
+Satın alma taleplerini okuma ve doğrulama işlemleri `load_and_validate_purchase_requests()` fonksiyonu ile yönetilir.
+
+Bu sayede `main()` fonksiyonu detay kodlarla kalabalıklaşmaz ve uygulamanın ana akışını daha net gösterir.

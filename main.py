@@ -89,15 +89,13 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
     save_report_data(OUTPUT_FILE_PATH, report_data)
 
 
-def main():
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Program başlatıldı.")
-
+def load_and_validate_config():
     config = load_config(CONFIG_FILE_PATH)
 
     if len(config) == 0:
         print("Rapor oluşturulamadı: config dosyası okunamadı.")
         write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: config dosyası okunamadı.")
-        return
+        return None
 
     is_config_valid, config_errors = validate_config(config)
 
@@ -110,7 +108,19 @@ def main():
             write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, error)
 
         print("Rapor oluşturulamadı: config dosyası hatalı.")
-        write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulamadı: config dosyası hatalı.")
+        write_log(LOG_FILE_PATH, LOG_LEVEL_ERROR, "Rapor oluşturulmadı: config dosyası hatalı.")
+        return None
+
+    return config
+    
+
+
+def main():
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Program başlatıldı.")
+
+    config = load_and_validate_config()
+
+    if config is None:
         return
 
     very_risky_limit = config["very_risky_limit"]

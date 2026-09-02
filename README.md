@@ -30,6 +30,7 @@ week3/
 ├── purchase_risk_report.json
 ├── app.log
 ├── report_builder.py
+├── app_loader.py
 └── README.md
 ```
 
@@ -68,6 +69,9 @@ purchase_risk_report.json
 
 report_builder.py
 → JSON rapor çıktısında kullanılacak rapor verisini oluşturur.
+
+app_loader.py
+→Config ve satın alma taleplerini yükler, doğrular ve hatalı durumda rapor üretimini durdurur.
 
 app.log
 → Program çalışma kayıtlarının tutulduğu log dosyası.

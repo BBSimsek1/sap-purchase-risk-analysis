@@ -36,3 +36,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Config okuma ve doğrulama süreci `load_and_validate_config()` fonksiyonuna taşındı.
 - Satın alma taleplerini okuma ve doğrulama süreci `load_and_validate_purchase_requests()` fonksiyonuna taşındı.
 - `main()` fonksiyonu sadeleştirilerek uygulamanın ana iş akışını daha net gösterecek hale getirildi.
+- Config ve satın alma talebi yükleme/doğrulama yardımcı fonksiyonları `app_loader.py` dosyasına taşındı.
+- `main.py` dosyası sadeleştirilerek yalnızca ana uygulama akışını yönetecek hale getirildi.

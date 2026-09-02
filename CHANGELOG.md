@@ -30,3 +30,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - JSON rapor çıktısına rapor türünü gösteren `report_type` alanı eklendi.
 - JSON rapor çıktısına rapor format versiyonunu gösteren `report_version` alanı eklendi.
 - `report_type` değeri `constants.py` içinde sabit olarak yönetilecek şekilde düzenlendi.
+- `build_report_data()` fonksiyonu `report_builder.py` modülüne taşındı.
+- JSON rapor verisi oluşturma sorumluluğu `main.py` dosyasından ayrıldı.
+- Rapor yazma fonksiyonu `save_report_data()` olarak yeniden adlandırıldı.

@@ -1,8 +1,9 @@
-from risk_analyzer import add_risk_status_to_all, calculate_risk_summary, calculate_department_summary, calculate_amount_summary_by_field
+from risk_analyzer import add_risk_status_to_all
 from data_writer import save_report_data
 from reporter import show_purchase_report
 from logger import write_log
 from datetime import datetime
+from report_summary import calculate_report_summaries
 from report_builder import build_report_data
 from app_loader import (
     load_and_validate_config,
@@ -13,8 +14,6 @@ from constants import (
     OUTPUT_FILE_PATH,
     LOG_FILE_PATH,
     CONFIG_FILE_PATH,
-    FIELD_DEPARTMENT,
-    FIELD_SUPPLIER,
     FIELD_RISK_STATUS,
     LOG_LEVEL_INFO,
     LOG_LEVEL_WARNING,
@@ -26,34 +25,6 @@ from constants import (
     REPORT_TYPE_PURCHASE_RISK_ANALYSIS,
     REPORT_VERSION
 )
-
-
-def calculate_report_summaries(updated_requests):
-    summary = calculate_risk_summary(updated_requests)
-    department_summary = calculate_department_summary(updated_requests)
-
-    department_amount_summary = calculate_amount_summary_by_field(
-        updated_requests,
-        FIELD_DEPARTMENT
-    )
-
-    supplier_amount_summary = calculate_amount_summary_by_field(
-        updated_requests,
-        FIELD_SUPPLIER
-    )
-
-    risk_amount_summary = calculate_amount_summary_by_field(
-        updated_requests,
-        FIELD_RISK_STATUS
-    )
-
-    return(
-        summary,
-        department_summary,
-        department_amount_summary,
-        supplier_amount_summary,
-        risk_amount_summary
-    )
 
 
 def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_limit):

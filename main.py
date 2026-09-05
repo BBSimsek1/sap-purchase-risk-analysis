@@ -27,6 +27,14 @@ from constants import (
 )
 
 
+def log_report_summary(summary):
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Satın alma risk raporu oluşturuldu.")
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Toplam talep sayısı: {summary[SUMMARY_TOTAL_COUNT]}")
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Normal talep sayısı: {summary[SUMMARY_NORMAL_COUNT]}")
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Riskli talep sayısı: {summary[SUMMARY_RISKY_COUNT]}")
+    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Çok riskli talep sayısı: {summary[SUMMARY_VERY_RISKY_COUNT]}")
+
+
 def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_limit):
     updated_requests = add_risk_status_to_all(
         purchase_requests,
@@ -41,14 +49,8 @@ def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_lim
         supplier_amount_summary,
         risk_amount_summary
     ) = calculate_report_summaries(updated_requests)
-    
 
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Satın alma risk raporu oluşturuldu.")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Toplam talep sayısı: {summary[SUMMARY_TOTAL_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Normal talep sayısı: {summary[SUMMARY_NORMAL_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Riskli talep sayısı: {summary[SUMMARY_RISKY_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Çok riskli talep sayısı: {summary[SUMMARY_VERY_RISKY_COUNT]}")
-
+    log_report_summary(summary)
     
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 

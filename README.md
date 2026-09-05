@@ -33,6 +33,8 @@ week3/
 ├── report_summary.py
 ├── report_logger.py
 ├── app_loader.py
+├── tests/
+│   └── test_risk_analyzer.py
 └── README.md
 ```
 
@@ -421,6 +423,8 @@ Bu projede aşağıdaki teknolojiler ve Python kavramları kullanılmıştır:
 - Loglama
 - Git ve GitHub
 - Markdown dokümantasyonu
+- Otomatik test yazımı
+- pytest
 
 ## Proje Mimarisi
 
@@ -501,3 +505,12 @@ Config okuma ve doğrulama işlemleri `load_and_validate_config()` fonksiyonu il
 Satın alma taleplerini okuma ve doğrulama işlemleri `load_and_validate_purchase_requests()` fonksiyonu ile yönetilir.
 
 Bu sayede `main()` fonksiyonu detay kodlarla kalabalıklaşmaz ve uygulamanın ana akışını daha net gösterir.
+
+## Testleri Çalıştırma
+
+Bu projede risk sınıflandırma mantığını kontrol etmek için `pytest` kullanılır.
+
+Testleri çalıştırmak için:
+
+```bash
+python3 -m pytest

@@ -46,3 +46,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `generate_purchase_risk_report()` fonksiyonu loglama detaylarından arındırıldı.
 - Rapor özeti loglama işlemi `report_logger.py` dosyasına taşındı.
 - `main.py` dosyası rapor loglama detaylarından arındırıldı.
+- Risk sınıflandırma mantığı için ilk otomatik testler eklendi.
+- `pytest` test aracı proje bağımlılığı olarak `requirements.txt` dosyasına eklendi.
+- `add_risk_status()` fonksiyonu için Normal, Riskli ve Çok Riskli talep senaryoları test edildi.

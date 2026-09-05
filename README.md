@@ -481,8 +481,11 @@ Program şu sırayla çalışır:
 3. Satın alma talepleri yüklenir ve doğrulanır.
 4. Risk analizi yapılır.
 5. Rapor özetleri hesaplanır.
-6. Terminal raporu gösterilir.
-7. JSON rapor çıktısı oluşturulur.
+6. Rapor özeti log dosyasına yazılır.
+7. Terminal raporu gösterilir.
+8. JSON rapor çıktısı oluşturulur.
+
+Rapor üretildikten sonra özet log kayıtları `log_report_summary()` fonksiyonu ile `app.log` dosyasına yazılır.
 
 Risk analizi sonrasında rapor özetleri `calculate_report_summaries()` fonksiyonu ile hesaplanır.
 

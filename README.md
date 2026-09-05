@@ -31,6 +31,7 @@ week3/
 ├── app.log
 ├── report_builder.py
 ├── report_summary.py
+├── report_logger.py
 ├── app_loader.py
 └── README.md
 ```
@@ -75,8 +76,10 @@ app_loader.py
 →Config ve satın alma taleplerini yükler, doğrular ve hatalı durumda rapor üretimini durdurur.
 
 report_summary.py
-
 → Risk, departman, tedarikçi ve tutar bazlı rapor özetlerini hesaplar.
+
+report_logger.py
+→ Rapor üretimiyle ilgili log kayıtlarını oluşturur.
 
 app.log
 → Program çalışma kayıtlarının tutulduğu log dosyası.
@@ -450,8 +453,10 @@ constants.py
 → Ortak sabitleri, dosya yollarını, alan adlarını ve risk limitlerini tutar.
 
 report_summary.py
-
 → Rapor özetlerini hesaplar.
+
+report_logger.py
+→ Rapor özetini app.log dosyasına yazar.
 
 ## Config Ayarları
 

@@ -44,3 +44,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `main.py` dosyası rapor özeti hesaplama detaylarından arındırıldı.
 - Rapor özetini loglama işlemi `log_report_summary()` fonksiyonuna taşındı.
 - `generate_purchase_risk_report()` fonksiyonu loglama detaylarından arındırıldı.
+- Rapor özeti loglama işlemi `report_logger.py` dosyasına taşındı.
+- `main.py` dosyası rapor loglama detaylarından arındırıldı.

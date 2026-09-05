@@ -3,6 +3,7 @@ from data_writer import save_report_data
 from reporter import show_purchase_report
 from logger import write_log
 from datetime import datetime
+from report_logger import log_report_summary
 from report_summary import calculate_report_summaries
 from report_builder import build_report_data
 from app_loader import (
@@ -18,21 +19,9 @@ from constants import (
     LOG_LEVEL_INFO,
     LOG_LEVEL_WARNING,
     LOG_LEVEL_ERROR,
-    SUMMARY_TOTAL_COUNT,
-    SUMMARY_NORMAL_COUNT,
-    SUMMARY_RISKY_COUNT,
-    SUMMARY_VERY_RISKY_COUNT,
     REPORT_TYPE_PURCHASE_RISK_ANALYSIS,
     REPORT_VERSION
 )
-
-
-def log_report_summary(summary):
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, "Satın alma risk raporu oluşturuldu.")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Toplam talep sayısı: {summary[SUMMARY_TOTAL_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Normal talep sayısı: {summary[SUMMARY_NORMAL_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Riskli talep sayısı: {summary[SUMMARY_RISKY_COUNT]}")
-    write_log(LOG_FILE_PATH, LOG_LEVEL_INFO, f"Çok riskli talep sayısı: {summary[SUMMARY_VERY_RISKY_COUNT]}")
 
 
 def generate_purchase_risk_report(purchase_requests, very_risky_limit, risky_limit):

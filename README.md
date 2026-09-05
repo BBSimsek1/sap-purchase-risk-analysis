@@ -514,3 +514,16 @@ Testleri çalıştırmak için:
 
 ```bash
 python3 -m pytest
+
+Risk özeti testi:
+
+```text
+1 Normal Talep
+1 Riskli Talep
+1 Çok Riskli Talep
+
+Beklenen sonuç:
+total_count = 3
+normal_count = 1
+risky_count = 1
+very_risky_count = 1

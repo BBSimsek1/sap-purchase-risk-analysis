@@ -49,3 +49,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Risk sınıflandırma mantığı için ilk otomatik testler eklendi.
 - `pytest` test aracı proje bağımlılığı olarak `requirements.txt` dosyasına eklendi.
 - `add_risk_status()` fonksiyonu için Normal, Riskli ve Çok Riskli talep senaryoları test edildi.
+- `calculate_risk_summary()` fonksiyonu için otomatik test eklendi.
+- Risk özeti hesaplamasında toplam, normal, riskli ve çok riskli talep sayıları test edildi.

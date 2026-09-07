@@ -549,3 +549,14 @@ Beklenen sonuç:
 IT = 12000
 Finance = 5000
 ```
+
+Tedarikçi bazlı tutar özeti testi:
+
+```text
+ABC Teknoloji → 9000 + 3000
+XYZ AŞ        → 5000
+
+Beklenen sonuç:
+ABC Teknoloji = 12000
+XYZ AŞ = 5000
+```

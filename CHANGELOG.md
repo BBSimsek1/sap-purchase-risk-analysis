@@ -55,3 +55,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Departman bazlı talep sayılarının doğru hesaplandığı test edildi.
 - `calculate_amount_summary_by_field()` fonksiyonu için departman bazlı tutar özeti testi eklendi.
 - Departmanlara göre toplam tutarların doğru hesaplandığı test edildi.
+- `calculate_amount_summary_by_field()` fonksiyonu için tedarikçi bazlı tutar özeti testi eklendi.
+- Tedarikçilere göre toplam tutarların doğru hesaplandığı test edildi.

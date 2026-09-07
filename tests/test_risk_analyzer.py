@@ -2,6 +2,7 @@ from risk_analyzer import (
     add_risk_status,
     calculate_risk_summary,
     calculate_department_summary,
+    calculate_amount_summary_by_field
 )
 from constants import (
     FIELD_AMOUNT,
@@ -97,3 +98,28 @@ def test_calculate_department_summary():
 
     assert department_summary["IT"] == 2
     assert department_summary["Finance"] == 1
+
+
+def test_calculate_amount_summary_by_department():
+    updated_requests = [
+        {
+            FIELD_DEPARTMENT: "IT",
+            FIELD_AMOUNT: 9000
+        },
+        {
+            FIELD_DEPARTMENT: "IT",
+            FIELD_AMOUNT: 3000
+        },
+        {
+            FIELD_DEPARTMENT: "Finance",
+            FIELD_AMOUNT: 5000
+        },
+    ]
+
+    amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_DEPARTMENT
+    )
+
+    assert amount_summary["IT"] == 12000
+    assert amount_summary["Finance"] == 5000

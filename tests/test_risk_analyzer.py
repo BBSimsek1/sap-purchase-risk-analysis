@@ -1,10 +1,12 @@
 from risk_analyzer import (
     add_risk_status,
-    calculate_risk_summary
+    calculate_risk_summary,
+    calculate_department_summary,
 )
 from constants import (
     FIELD_AMOUNT,
     FIELD_RISK_STATUS,
+    FIELD_DEPARTMENT,
     RISK_STATUS_NORMAL,
     RISK_STATUS_RISKY,
     RISK_STATUS_VERY_RISKY,
@@ -76,3 +78,22 @@ def test_calculate_risk_summary():
     assert summary[SUMMARY_NORMAL_COUNT] == 1
     assert summary[SUMMARY_RISKY_COUNT] == 1
     assert summary[SUMMARY_VERY_RISKY_COUNT] == 1
+
+
+def test_calculate_department_summary():
+    updated_requests = [
+        {
+            FIELD_DEPARTMENT: "IT"
+        },
+        {
+            FIELD_DEPARTMENT: "IT"
+        },
+        {
+            FIELD_DEPARTMENT: "Finance"
+        },
+    ]
+
+    department_summary = calculate_department_summary(updated_requests)
+
+    assert department_summary["IT"] == 2
+    assert department_summary["Finance"] == 1

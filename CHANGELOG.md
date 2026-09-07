@@ -64,3 +64,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `validate_purchase_requests()` fonksiyonu için validator testleri genişletildi.
 - Eksik `supplier`, metin gelen `amount`, sıfır gelen `amount` ve boş `department` senaryoları test edildi.
 - Validator hata mesajları daha tutarlı hale getirildi.
+- `validate_config()` fonksiyonu için config validator testleri eklendi.
+- Geçerli config, eksik `risky_limit` ve hatalı limit sıralaması senaryoları test edildi.

@@ -597,3 +597,13 @@ Amount metin gelirse → hata verir
 Amount 0 gelirse → hata verir
 Department boş gelirse → hata verir
 ```
+
+Config validator testleri:
+
+```text
+Geçerli config → is_valid = True, errors = []
+
+Eksik risky_limit → hata verir
+
+very_risky_limit <= risky_limit → hata verir
+```

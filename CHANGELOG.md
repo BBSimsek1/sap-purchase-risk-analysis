@@ -53,3 +53,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Risk özeti hesaplamasında toplam, normal, riskli ve çok riskli talep sayıları test edildi.
 - `calculate_department_summary()` fonksiyonu için otomatik test eklendi.
 - Departman bazlı talep sayılarının doğru hesaplandığı test edildi.
+- `calculate_amount_summary_by_field()` fonksiyonu için departman bazlı tutar özeti testi eklendi.
+- Departmanlara göre toplam tutarların doğru hesaplandığı test edildi.

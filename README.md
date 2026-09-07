@@ -538,3 +538,14 @@ Finance
 Beklenen sonuç:
 IT = 2
 Finance = 1
+
+Departman bazlı tutar özeti testi:
+
+```text
+IT → 9000 + 3000
+Finance → 5000
+
+Beklenen sonuç:
+IT = 12000
+Finance = 5000
+```

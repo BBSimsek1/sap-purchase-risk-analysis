@@ -31,7 +31,7 @@ def validate_purchase_requests(purchase_requests):
                 
         if FIELD_AMOUNT in request:
             if not isinstance(request[FIELD_AMOUNT], (int, float)):
-                errors.append(f"Hata: {request_id} kaydından {FIELD_AMOUNT} alanı sayı olmalıdır.")
+                errors.append(f"Hata: {request_id} kaydında {FIELD_AMOUNT} alanı sayı olmalıdır.")
             
             elif request[FIELD_AMOUNT] <= 0:
                 errors.append(f"Hata: {request_id} kaydından {FIELD_AMOUNT} alanı 0'dan büyük olmalıdır.")

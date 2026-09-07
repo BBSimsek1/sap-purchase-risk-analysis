@@ -59,3 +59,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Tedarikçilere göre toplam tutarların doğru hesaplandığı test edildi.
 - `calculate_amount_summary_by_field()` fonksiyonu için risk durumu bazlı tutar özeti testi eklendi.
 - Risk durumlarına göre toplam tutarların doğru hesaplandığı test edildi.
+- `validate_purchase_requests()` fonksiyonu için ilk otomatik test eklendi.
+- Doğru formatta gelen satın alma talebinin geçerli kabul edildiği test edildi.

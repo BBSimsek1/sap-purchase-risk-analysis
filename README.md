@@ -573,3 +573,16 @@ Riskli Talep = 16000
 Normal Talep = 3000
 Çok Riskli Talep = 15000
 ```
+
+Geçerli satın alma talebi testi:
+
+```text
+id = PR001
+amount = 9000
+department = IT
+supplier = ABC Teknoloji
+
+Beklenen sonuç:
+is_valid = True
+errors = []
+```

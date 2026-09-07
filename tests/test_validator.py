@@ -52,3 +52,19 @@ def test_purchase_request_amount_must_be_number():
 
     assert is_valid is False
     assert "Hata: PR001 kaydında amount alanı sayı olmalıdır." in errors
+
+
+def test_purchase_request_amount_must_be_greater_than_zero():
+    purchase_requests = [
+        {
+            FIELD_ID: "PR001",
+            FIELD_AMOUNT: 0,
+            FIELD_DEPARTMENT: "IT",
+            FIELD_SUPPLIER: "ABC Teknoloji"
+        }
+    ]
+
+    is_valid, errors = validate_purchase_requests(purchase_requests)
+
+    assert is_valid is False
+    assert "Hata: PR001 kaydında amount alanı 0'dan büyük olmalıdır." in errors

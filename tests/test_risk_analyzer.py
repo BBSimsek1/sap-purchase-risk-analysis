@@ -149,3 +149,33 @@ def test_calculate_amount_summary_by_supplier():
 
     assert amount_summary["ABC Teknoloji"] == 12000
     assert amount_summary["XYZ AŞ"] == 5000
+
+
+def test_calculate_amount_summary_by_risk_status():
+    updated_requests = [
+        {
+            FIELD_RISK_STATUS: RISK_STATUS_RISKY,
+            FIELD_AMOUNT: 9000
+        },
+        {
+            FIELD_RISK_STATUS: RISK_STATUS_RISKY,
+            FIELD_AMOUNT: 7000
+        },
+        {
+            FIELD_RISK_STATUS: RISK_STATUS_NORMAL,
+            FIELD_AMOUNT: 3000
+        },
+        {
+            FIELD_RISK_STATUS: RISK_STATUS_VERY_RISKY,
+            FIELD_AMOUNT: 15000
+        },
+    ]
+
+    amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_RISK_STATUS
+    )
+
+    assert amount_summary[RISK_STATUS_RISKY] == 16000
+    assert amount_summary[RISK_STATUS_NORMAL] == 3000
+    assert amount_summary[RISK_STATUS_VERY_RISKY] == 15000

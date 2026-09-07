@@ -527,3 +527,14 @@ total_count = 3
 normal_count = 1
 risky_count = 1
 very_risky_count = 1
+
+Departman özeti testi:
+
+```text
+IT
+IT
+Finance
+
+Beklenen sonuç:
+IT = 2
+Finance = 1

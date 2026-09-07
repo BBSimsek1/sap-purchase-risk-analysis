@@ -51,3 +51,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `add_risk_status()` fonksiyonu için Normal, Riskli ve Çok Riskli talep senaryoları test edildi.
 - `calculate_risk_summary()` fonksiyonu için otomatik test eklendi.
 - Risk özeti hesaplamasında toplam, normal, riskli ve çok riskli talep sayıları test edildi.
+- `calculate_department_summary()` fonksiyonu için otomatik test eklendi.
+- Departman bazlı talep sayılarının doğru hesaplandığı test edildi.

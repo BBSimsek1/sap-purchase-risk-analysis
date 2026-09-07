@@ -68,3 +68,19 @@ def test_purchase_request_amount_must_be_greater_than_zero():
 
     assert is_valid is False
     assert "Hata: PR001 kaydında amount alanı 0'dan büyük olmalıdır." in errors
+
+
+def test_purchase_request_department_cannot_be_empty():
+    purchase_requests = [
+        {
+            FIELD_ID: "PR001",
+            FIELD_AMOUNT: 9000,
+            FIELD_DEPARTMENT: "",
+            FIELD_SUPPLIER: "ABC Teknoloji"
+        }
+    ]
+
+    is_valid, errors = validate_purchase_requests(purchase_requests)
+
+    assert is_valid is False
+    assert "Hata: PR001 kaydında department alanı boş olamaz." in errors

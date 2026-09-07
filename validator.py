@@ -24,7 +24,7 @@ def validate_purchase_requests(purchase_requests):
                     errors.append(f"Hata: {request_id} kaydında {field} alanı metin olmalıdır.")
                 
                 elif request[field].strip() == "":
-                    errors.append(f"Hata: {request_id} kaydından {field} alanı boş olamaz.")
+                    errors.append(f"Hata: {request_id} kaydında {field} alanı boş olamaz.")
 
                 else:
                     request[field] = request[field].strip()

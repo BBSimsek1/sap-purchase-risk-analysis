@@ -57,3 +57,5 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Departmanlara göre toplam tutarların doğru hesaplandığı test edildi.
 - `calculate_amount_summary_by_field()` fonksiyonu için tedarikçi bazlı tutar özeti testi eklendi.
 - Tedarikçilere göre toplam tutarların doğru hesaplandığı test edildi.
+- `calculate_amount_summary_by_field()` fonksiyonu için risk durumu bazlı tutar özeti testi eklendi.
+- Risk durumlarına göre toplam tutarların doğru hesaplandığı test edildi.

@@ -560,3 +560,16 @@ Beklenen sonuç:
 ABC Teknoloji = 12000
 XYZ AŞ = 5000
 ```
+
+Risk durumu bazlı tutar özeti testi:
+
+```text
+Riskli Talep     → 9000 + 7000
+Normal Talep     → 3000
+Çok Riskli Talep → 15000
+
+Beklenen sonuç:
+Riskli Talep = 16000
+Normal Talep = 3000
+Çok Riskli Talep = 15000
+```

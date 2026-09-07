@@ -8,6 +8,7 @@ from constants import (
     FIELD_AMOUNT,
     FIELD_RISK_STATUS,
     FIELD_DEPARTMENT,
+    FIELD_SUPPLIER,
     RISK_STATUS_NORMAL,
     RISK_STATUS_RISKY,
     RISK_STATUS_VERY_RISKY,
@@ -123,3 +124,28 @@ def test_calculate_amount_summary_by_department():
 
     assert amount_summary["IT"] == 12000
     assert amount_summary["Finance"] == 5000
+
+
+def test_calculate_amount_summary_by_supplier():
+    updated_requests = [
+        {
+            FIELD_SUPPLIER: "ABC Teknoloji",
+            FIELD_AMOUNT: 9000
+        },
+        {
+            FIELD_SUPPLIER: "ABC Teknoloji",
+            FIELD_AMOUNT: 3000
+        },
+        {
+            FIELD_SUPPLIER: "XYZ AŞ",
+            FIELD_AMOUNT: 5000
+        },
+    ]
+
+    amount_summary = calculate_amount_summary_by_field(
+        updated_requests,
+        FIELD_SUPPLIER
+    )
+
+    assert amount_summary["ABC Teknoloji"] == 12000
+    assert amount_summary["XYZ AŞ"] == 5000

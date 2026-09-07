@@ -586,3 +586,14 @@ Beklenen sonuç:
 is_valid = True
 errors = []
 ```
+
+Validator testleri:
+
+```text
+Geçerli satın alma talebi → is_valid = True, errors = []
+
+Eksik supplier → hata verir
+Amount metin gelirse → hata verir
+Amount 0 gelirse → hata verir
+Department boş gelirse → hata verir
+```

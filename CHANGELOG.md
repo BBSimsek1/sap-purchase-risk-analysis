@@ -61,3 +61,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Risk durumlarına göre toplam tutarların doğru hesaplandığı test edildi.
 - `validate_purchase_requests()` fonksiyonu için ilk otomatik test eklendi.
 - Doğru formatta gelen satın alma talebinin geçerli kabul edildiği test edildi.
+- `validate_purchase_requests()` fonksiyonu için validator testleri genişletildi.
+- Eksik `supplier`, metin gelen `amount`, sıfır gelen `amount` ve boş `department` senaryoları test edildi.
+- Validator hata mesajları daha tutarlı hale getirildi.

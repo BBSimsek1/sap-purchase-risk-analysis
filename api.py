@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 
+from config_loader import load_config
 from risk_analyzer import (
     add_risk_status_to_all,
     calculate_risk_summary
 )
+from constants import CONFIG_FILE_PATH
 
 app = FastAPI()
 
@@ -16,8 +18,10 @@ def home():
 
 @app.post("/analyze-purchase-requests")
 def analyze_purchase_requests(purchase_requests: list[dict]):
-    very_risky_limit = 10000
-    risky_limit = 5000
+    config = load_config(CONFIG_FILE_PATH)
+
+    very_risky_limit = config["very_risky_limit"]
+    risky_limit = config["risky_limit"]
 
     updated_requests = add_risk_status_to_all(
         purchase_requests,

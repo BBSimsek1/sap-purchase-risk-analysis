@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from validator import validate_purchase_requests
 from config_loader import load_config
 from risk_analyzer import (
     add_risk_status_to_all,
@@ -22,6 +23,13 @@ def analyze_purchase_requests(purchase_requests: list[dict]):
 
     very_risky_limit = config["very_risky_limit"]
     risky_limit = config["risky_limit"]
+
+    is_valid, validation_errors = validate_purchase_requests(purchase_requests)
+
+    if not is_valid:
+        return {
+            "errors": validation_errors
+        }
 
     updated_requests = add_risk_status_to_all(
         purchase_requests,

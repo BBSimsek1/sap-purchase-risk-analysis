@@ -607,3 +607,12 @@ Eksik risky_limit → hata verir
 
 very_risky_limit <= risky_limit → hata verir
 ```
+
+## API Kullanımı
+
+Bu proje FastAPI ile API olarak da çalıştırılabilir.
+
+API'yi başlatmak için:
+
+```bash
+python3 -m uvicorn api:app --reload

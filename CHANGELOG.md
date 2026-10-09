@@ -66,3 +66,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - Validator hata mesajları daha tutarlı hale getirildi.
 - `validate_config()` fonksiyonu için config validator testleri eklendi.
 - Geçerli config, eksik `risky_limit` ve hatalı limit sıralaması senaryoları test edildi.
+- FastAPI ile API kullanımı README dosyasına eklendi.
+- `GET /` ve `POST /analyze-purchase-requests` endpoint'leri dokümante edildi.
+- API request, başarılı response ve hata response örnekleri eklendi.

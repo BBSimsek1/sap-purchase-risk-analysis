@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from config_validator import validate_config
 from validator import validate_purchase_requests
 from config_loader import load_config
 from risk_analyzer import (
@@ -20,6 +21,13 @@ def home():
 @app.post("/analyze-purchase-requests")
 def analyze_purchase_requests(purchase_requests: list[dict]):
     config = load_config(CONFIG_FILE_PATH)
+
+    is_config_valid, config_errors = validate_config(config)
+
+    if not is_config_valid:
+        return{
+            "errors": config_errors
+        }
 
     very_risky_limit = config["very_risky_limit"]
     risky_limit = config["risky_limit"]

@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 
+from datetime import datetime
+from report_builder import build_report_data
+from report_summary import calculate_report_summaries
 from config_validator import validate_config
 from validator import validate_purchase_requests
 from config_loader import load_config
@@ -7,7 +10,12 @@ from risk_analyzer import (
     add_risk_status_to_all,
     calculate_risk_summary
 )
-from constants import CONFIG_FILE_PATH
+from constants import (
+    CONFIG_FILE_PATH,
+    FIELD_DEPARTMENT,
+    FIELD_SUPPLIER,
+    FIELD_RISK_STATUS
+)
 
 app = FastAPI()
 
@@ -45,9 +53,26 @@ def analyze_purchase_requests(purchase_requests: list[dict]):
         risky_limit
     )
 
-    summary = calculate_risk_summary(updated_requests)
+    (
+    summary,
+    department_summary,
+    department_amount_summary,
+    supplier_amount_summary,
+    risk_amount_summary
+    ) = calculate_report_summaries(updated_requests)
 
-    return {
-        "summary": summary,
-        "requests": updated_requests
-    }
+    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    report_data = build_report_data(
+    generated_at,
+    risky_limit,
+    very_risky_limit,
+    summary,
+    department_summary,
+    department_amount_summary,
+    supplier_amount_summary,
+    risk_amount_summary,
+    updated_requests
+    )
+
+    return report_data

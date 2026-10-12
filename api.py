@@ -30,6 +30,16 @@ def load_and_validate_api_config():
     return config, []
 
 
+def validate_api_purchase_requests(purchase_requests):
+    is_valid, validation_errors = validate_purchase_requests(purchase_requests)
+
+
+    if not is_valid:
+        return validation_errors
+
+    return []
+
+
 @app.get("/")
 def home():
     return {
@@ -48,9 +58,9 @@ def analyze_purchase_requests(purchase_requests: list[dict]):
     very_risky_limit = config["very_risky_limit"]
     risky_limit = config["risky_limit"]
 
-    is_valid, validation_errors = validate_purchase_requests(purchase_requests)
+    validation_errors = validate_api_purchase_requests(purchase_requests)
 
-    if not is_valid:
+    if len(validation_errors) > 0:
         return {
             "errors": validation_errors
         }

@@ -73,3 +73,6 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - `GET /` endpoint'inin başarılı cevap döndürdüğü test edildi.
 - `POST /analyze-purchase-requests` endpoint'inin geçerli satın alma talebini analiz ettiği test edildi.
 - Hatalı `amount` değeri gönderildiğinde API'nin `errors` listesi döndürdüğü test edildi.
+- `POST /analyze-purchase-requests` endpoint'i artık `build_report_data()` fonksiyonunu kullanarak tam rapor verisi döndürüyor.
+- API response içine `report_type`, `report_version`, `generated_at`, `risk_limits`, departman özeti, tedarikçi tutar özeti ve risk tutar özeti alanları eklendi.
+- API response testleri genişletilerek tam rapor formatı kontrol edilmeye başlandı.

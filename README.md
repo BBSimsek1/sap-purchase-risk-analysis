@@ -617,6 +617,46 @@ API'yi başlatmak için:
 ```bash
 python3 -m uvicorn api:app --reload
 
+{
+  "report_type": "purchase_risk_analysis",
+  "report_version": "1.0",
+  "generated_at": "2026-10-12 10:30:00",
+  "source_file": "purchase_requests.json",
+  "risk_limits": {
+    "risky_limit": 5000,
+    "very_risky_limit": 10000
+  },
+  "summary": {
+    "total_count": 1,
+    "normal_count": 0,
+    "risky_count": 1,
+    "very_risky_count": 0
+  },
+  "department_summary": {
+    "IT": 1
+  },
+  "department_amount_summary": {
+    "IT": 9000
+  },
+  "supplier_amount_summary": {
+    "ABC Teknoloji": 9000
+  },
+  "risk_amount_summary": {
+    "Riskli Talep": 9000
+  },
+  "requests": [
+    {
+      "id": "PR001",
+      "amount": 9000,
+      "department": "IT",
+      "supplier": "ABC Teknoloji",
+      "risk_status": "Riskli Talep",
+      "ai_comment": "Bu talep yüksek tutarlı olduğu için yönetici onayı önerilir.",
+      "recommended_action": "Yönetici onayına gönder."
+    }
+  ]
+}
+
 ## Testleri Öalıştırma
 
 API testleri:
@@ -632,5 +672,19 @@ POST /analyze-purchase-requests
 → amount metin gelirse errors listesi döndürür.
 ```
 
+API response format testi:
 
+```text
+POST /analyze-purchase-requests endpoint'i başarılı cevapta şu alanları döndürmelidir:
+
+report_type
+report_version
+generated_at
+risk_limits
+summary
+department_summary
+department_amount_summary
+supplier_amount_summary
+risk_amount_summary
+requests
 

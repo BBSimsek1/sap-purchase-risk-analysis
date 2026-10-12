@@ -69,3 +69,7 @@ Bu dosya, projede yapılan önemli değişiklikleri takip etmek için kullanıl�
 - FastAPI ile API kullanımı README dosyasına eklendi.
 - `GET /` ve `POST /analyze-purchase-requests` endpoint'leri dokümante edildi.
 - API request, başarılı response ve hata response örnekleri eklendi.
+- API endpointleri için otomatik testler eklendi.
+- `GET /` endpoint'inin başarılı cevap döndürdüğü test edildi.
+- `POST /analyze-purchase-requests` endpoint'inin geçerli satın alma talebini analiz ettiği test edildi.
+- Hatalı `amount` değeri gönderildiğinde API'nin `errors` listesi döndürdüğü test edildi.

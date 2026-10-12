@@ -616,3 +616,21 @@ API'yi başlatmak için:
 
 ```bash
 python3 -m uvicorn api:app --reload
+
+## Testleri Öalıştırma
+
+API testleri:
+
+```text
+GET /
+→ API çalışıyor mesajı döndürür.
+
+POST /analyze-purchase-requests
+→ Geçerli satın alma talebi gönderildiğinde risk analizi sonucu döndürür.
+
+POST /analyze-purchase-requests
+→ amount metin gelirse errors listesi döndürür.
+```
+
+
+

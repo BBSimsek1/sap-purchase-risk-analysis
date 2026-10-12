@@ -19,6 +19,16 @@ from constants import (
 
 app = FastAPI()
 
+def load_and_validate_api_config():
+    config = load_config(CONFIG_FILE_PATH)
+
+    is_config_valid, config_errors = validate_config(config)
+
+    if not is_config_valid:
+        return None, config_errors
+
+    return config, []
+
 
 @app.get("/")
 def home():
@@ -28,12 +38,10 @@ def home():
 
 @app.post("/analyze-purchase-requests")
 def analyze_purchase_requests(purchase_requests: list[dict]):
-    config = load_config(CONFIG_FILE_PATH)
+    config, config_errors = load_and_validate_api_config()
 
-    is_config_valid, config_errors = validate_config(config)
-
-    if not is_config_valid:
-        return{
+    if config is None:
+        return {
             "errors": config_errors
         }
 
